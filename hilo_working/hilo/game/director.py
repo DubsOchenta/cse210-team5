@@ -83,3 +83,5 @@ class Director:
                 print(f"Your score is: {self.total_score}\nThanks for playing!")
         else:
             self.is_playing = print("Game Over")
+
+            
