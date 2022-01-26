@@ -1,4 +1,4 @@
-from game.hilo_card import Card
+from .hilo_card import Card
 
 class Director:
     def __init__(self):

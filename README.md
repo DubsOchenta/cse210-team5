@@ -10,10 +10,13 @@ Make sure you have Python 3.10.1 or newer installed and running on your machine.
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- Hilo                (source code for game)
-  +-- game              (specific classes)
-  +-- __main__.py       (program entry point)
-+-- README.md           (general info)
+  +--__main__.py       (program entry point)
+  +--README.md           (general info)
+  +--modules            (specific classes)
+    +--card.py      (Main module for a simple card game)
+    +--hilo_card.py 	(Card module with extras)
+    +--hilo_director.py (Handle most of the game logic)
+
 ```
 
 ## Required Technologies
@@ -22,4 +25,12 @@ root                    (project root folder)
 
 ## Authors
 ---
-* Tylor Perry (tylorjperry@byui.edu), Cameron Barrett, Robert Odell, and Wilson Romero
+<a href="https://github.com/DubsOchenta/cse210-team5/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DubsOchenta/cse210-team5" />
+</a>
+
+* [Tylor Perry](https://github.com/DubsOchenta)
+* [Cameron Barrett](https://github.com/Cams1stGitHub) 
+* [Robert Odell](https://github.com/rodell1983)
+* [Wilson Romero](https://github.com/wilsonBYU)
+
