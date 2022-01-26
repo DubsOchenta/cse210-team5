@@ -1,5 +1,5 @@
 from game.card import Card
-
+from .font import font
 """
 Cameron Barrett
 Director Class in progress
@@ -13,8 +13,10 @@ class Director:
         self.is_playing = True
         self.points = 0
         self.total_score = 300
+        self.font = font()
 
     def start_game(self):
+        self.font.print_title()
         while self.is_playing:
             self.first_draw()
             self.hilo()
