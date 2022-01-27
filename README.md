@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="hilo_menu.png" alt="Sublime's custom image" height="300px"/>
+</p>
 # Hilo
 Wanna play a game of chance and sheer dumb luck...by guessing cards correctly? Then play Hilo and your desire will become a reality. The rules are simple. You start out with 300 points and a randomly chosen starting card. Then you are asked a simple question: "h" for High or "l" for Low. Each time you guess correctly, you get 100 points, Woohoo! But if you guess wrong, well, say goodbye to 75 points from your score. As long as your score stays above zero you can keep playing. But, If not then it is GAME-OVER.
 
@@ -9,13 +12,13 @@ Make sure you have Python 3.10.1 or newer installed and running on your machine.
 ---
 The project files and folders are organized as follows:
 ```
-root                    (project root folder)
-  +--__main__.py       (program entry point)
-  +--README.md           (general info)
-  +--modules            (specific classes)
-    +--card.py      (Main module for a simple card game)
-    +--hilo_card.py 	(Card module with extras)
-    +--hilo_director.py (Handle most of the game logic)
+root                   	(project root folder)
+  +--__main__.py		(program entry point)
+  +--README.md			(general info)
+  +--game/           	(modules)
+    +--card.py     		(Main card module)
+    +--font.py			(big menu, instructions and font colors module)
+    +--director.py		(Game logic)
 
 ```
 
