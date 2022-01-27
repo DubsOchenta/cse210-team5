@@ -47,6 +47,12 @@ class Director:
         Args:
             self (director): an instance of Director.
         """
+        self.font = Font()
+        self.font_color = ""
+
+    def start_game(self):
+        self.font.print_title()
+        self.font.print_instructions()
         while self.is_playing:
             self.first_draw()
             self.hilo()
@@ -80,10 +86,10 @@ class Director:
             self (Director): An instance of Director.
         """
         self.draw_card = ""
-        self.draw_card = input("Higher or lower? [h/l] ").lower()
+        self.draw_card = input(f"{self.font.yellow_text}Higher or lower? [h/l] {self.font.clear_color}").lower()
         while self.draw_card != "h" and self.draw_card != "l":
-            print("\nPlease Type h for Higher or l for Lower")
-            self.draw_card = input("Higher or lower? [h/l] ").lower()
+            print(f"\n{self.font.yellow_text}Please Type h for Higher or l for Lower")
+            self.draw_card = input(f"Higher or lower? [h/l] {self.font.clear_color}").lower()
 
     def second_draw(self):
         """Generates the second random card and displays it to the player.
@@ -109,17 +115,17 @@ class Director:
         """
         if self.card_value1 < self.card_value2 and self.draw_card == "h":
             self.points = 100
+            self.font_color = self.font.green_text
         elif self.card_value1 > self.card_value2 and self.draw_card == "l":
             self.points = 100
-        elif self.card_value1 > self.card_value2 and self.draw_card == "h":
-            self.points = -75
-        elif self.card_value1 < self.card_value2 and self.draw_card == "l":
-            self.points = -75
+            self.font_color = self.font.green_text
         else:
+            self.total_score -= 75
             self.points = 0
+            self.font_color = self.font.red_text
         self.total_score += self.points
 
-        print(f"Your score is: {self.total_score}")
+        print(f"{self.font_color}Your score is: {self.total_score}{self.font.clear_color}")
         self.first_card.clear()
         self.next_card.clear()
 
@@ -137,7 +143,7 @@ class Director:
                 deal = input("Play again? [y/n] ").lower()
             self.is_playing = (deal == "y")
             if deal == "n":
-                print(f"Your score is: {self.total_score}\nThanks for playing!")
+                print(f"Your score is: {self.total_score}\n {self.font.blue_text} Thanks for playing!{self.font.clear_color}")
         else:
             self.is_playing = print("Game Over")
 
