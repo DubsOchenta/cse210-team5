@@ -1,5 +1,5 @@
 from game.card import Card
-from .font import font
+from .font import Font
 """
 Cameron Barrett
 Director Class in progress
@@ -23,6 +23,8 @@ class Director:
         points (int): The amount of points scored during a round.
 
         total_score (int): The score for the entire game.
+
+        font (class): An instance of Font class.
     """
 
     def __init__(self):
@@ -36,7 +38,7 @@ class Director:
         self.is_playing = True
         self.points = 0
         self.total_score = 300
-        self.font = font()
+        self.font = Font()
 
     def start_game(self):
         self.font.print_title()
