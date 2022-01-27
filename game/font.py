@@ -1,15 +1,31 @@
+"""
+Tylor Perry
+Cameron Barrett
+Robert Odell
+Wilson Romero
+Nourcel Kaniki
+Font Class
+CSE 210
+"""
+
+
 
 class Font:
     """Class to print the game title when the game starts.
     
     Attributes:
+    -----------
         yellow_text (str): A string containing ACSII code.
         red_text (str): A string containing ACSII code.
+        green_text (str): A string containing ACSII code.
+        blue_text (str): A string containing ACSII code.
+        clear_color (str): A string containing ACSII code to clear the font color.
     """
     def __init__(self):
         """Creates a new instance of Font.
         
         Args:
+        -----
             self (Font): An instance of Font.
         """
         self.yellow_text = "\033[1;33m"
@@ -22,6 +38,7 @@ class Font:
         """Prints the game title to the screen.
         
         Args:
+        -----
             self (Font): An instance of Font.
         """
         print(f"{self.yellow_text}##     ## ####  ######   ##     ## ##        #######  ##      ## ")
@@ -33,6 +50,12 @@ class Font:
         print(f"##     ## ####  ######   ##     ## ########  #######   ###  ###{self.clear_color}")
 
     def print_instructions(self):
+        """Prints the game instructions to the screen.
+        
+        Args:
+        -----
+            self (Font): An instance of Font.
+        """
         print(f"""\n{self.blue_text}You start out with 300 points and a randomly chosen starting card. 
 Then you are asked a simple question: "h" for High or "l" for Low. 
 Each time you guess correctly, you get 100 points, Woohoo! 

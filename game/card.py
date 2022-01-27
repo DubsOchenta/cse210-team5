@@ -1,6 +1,12 @@
-
-# Card Class
-# CSE210 By Robert Odell
+"""
+Tylor Perry
+Cameron Barrett
+Robert Odell
+Wilson Romero
+Nourcel Kaniki
+Card Class
+CSE 210
+"""
 
 import random
 
@@ -11,7 +17,8 @@ class Card:
     The purpose of Card is to generate a random card value
     and suit name and return the point value for that card.
 
-     Attributes:
+    Attributes:
+    -----------
         suits (dict[int, str]): A dictionary with an int as the suit value
         for the dict key and a string as the suit name for the dict value.
 
@@ -27,6 +34,7 @@ class Card:
         """Constructs a new instance of Card.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         self.__suits = {1: "Club",
@@ -56,6 +64,7 @@ class Card:
         """Generates a new random suit and card value for the card.
         
         Args:
+        -----
             self (Card): An instance of Card."""
         self.__value = random.randint(1, 13)
         self.__suit = random.randint(1, 4)
@@ -64,6 +73,7 @@ class Card:
         """Returns a suit.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         return self.__suit
@@ -72,6 +82,7 @@ class Card:
         """Returns the card suit as a string.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         return self.__suits[self.suit]
@@ -80,6 +91,7 @@ class Card:
         """Sets the card suit to a new number.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         self.__suit = value
@@ -88,6 +100,7 @@ class Card:
         """Returns the card value.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         return self.__value
@@ -96,6 +109,7 @@ class Card:
         """Returns the card value as a string.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         return self.__values[self.value]
@@ -104,6 +118,7 @@ class Card:
         """Sets the card value to a new number.
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         self.__value = value
@@ -113,6 +128,7 @@ class Card:
         Example: 'King of Clubs'
         
         Args:
+        -----
             self (Card): An instance of Card.
         """
         return (f"{self.get_value_string()} of {self.get_suit_string()}s")

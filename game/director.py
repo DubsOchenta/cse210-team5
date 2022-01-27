@@ -1,10 +1,15 @@
-from game.card import Card
-from .font import Font
 """
+Tylor Perry
 Cameron Barrett
-Director Class in progress
+Robert Odell
+Wilson Romero
+Nourcel Kaniki
+Director Class
 CSE 210
 """
+from .card import Card
+from .font import Font
+
 
 class Director:
     """A person who directs the game.
@@ -12,6 +17,7 @@ class Director:
     The director controls the sequece of game play.
 
     Attributes:
+    -----------
         first_card (dict{card1.card_name(): card1.get_value()}): A dictionary
         with card1.card_name as the key and card1.get_value as the value.
 
@@ -25,12 +31,16 @@ class Director:
         total_score (int): The score for the entire game.
 
         font (class): An instance of Font class.
+        
+        font_color (string): A blank string that will hold the color depending on the score.
+        
     """
 
     def __init__(self):
         """Constructs a new Director.
         
         Args:
+        -----
             self (Director): an instance of Director.
         """
         self.first_card = {}
@@ -42,6 +52,13 @@ class Director:
         self.font_color = ""
 
     def start_game(self):
+        """Starts the game by running the main game loop.
+        
+        Args:
+        -----
+            self (director): an instance of Director.
+        """
+
         self.font.print_title()
         self.font.print_instructions()
         while self.is_playing:
@@ -55,6 +72,7 @@ class Director:
         """Generates the first random card and displays it to the player.
         
         Args:
+        -----
             self (Director): An instance of Director.
         """
         if not self.is_playing:
@@ -74,6 +92,7 @@ class Director:
         """Asks the user if the next card will be higher or lower.
         
         Args:
+        -----
             self (Director): An instance of Director.
         """
         self.draw_card = ""
@@ -86,6 +105,7 @@ class Director:
         """Generates the second random card and displays it to the player.
         
         Args:
+        -----
             self (Director): An instance of Director.
         """
         card2 = Card()
@@ -102,6 +122,7 @@ class Director:
         """Updates the players score and displays the score to the player.
         
         Args:
+        -----
             self (Director): An instance of Director.
         """
         if self.card_value1 < self.card_value2 and self.draw_card == "h":
@@ -129,6 +150,7 @@ class Director:
         """Asks the player if they want to play again.
         
         Args:
+        -----
             self (Director): An instance of Director.
         """
         if self.is_playing == (self.total_score > 0):
