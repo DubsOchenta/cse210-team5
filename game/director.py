@@ -77,7 +77,6 @@ class Director:
 
         for key1, value1 in self.first_card.items():
             self.card_value1 = value1
-            print(self.card_value1)
         print(f"\nThe card is: {key1}")
 
     def hilo(self):
@@ -106,7 +105,6 @@ class Director:
 
         for key2, value2 in self.next_card.items():
             self.card_value2 = value2
-            print(self.card_value2)
         print(f"Next card was: {key2}")
 
     def score(self):
