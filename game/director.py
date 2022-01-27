@@ -119,13 +119,15 @@ class Director:
         elif self.card_value1 > self.card_value2 and self.draw_card == "l":
             self.points = 100
             self.font_color = self.font.green_text
-        elif self.card_value1 == self.card_value2 and self.draw_card == "l" or self.draw_card == "h":
+        elif self.card_value1 > self.card_value2 and self.draw_card == "h":
+            self.points = -75
+            self.font_color = self.font.red_text
+        elif self.card_value1 < self.card_value2 and self.draw_card == "l":
+            self.points = -75
+            self.font_color = self.font.red_text
+        else:
             self.points = 0
             self.font_color = self.font.blue_text
-        else:
-            self.total_score -= 75
-            self.points = 0
-            self.font_color = self.font.red_text
         self.total_score += self.points
 
         print(f"{self.font_color}Your score is: {self.total_score}{self.font.clear_color}")
