@@ -6,58 +6,34 @@ import random
 
 
 class Card:
-    """
-     Class represents one card
+    """A card drawn from a deck with a different value and suit name.
 
-     ...
+    The purpose of Card is to generate a random card value
+    and suit name and return the point value for that card.
 
-     Attributes
-     -----------
+     Attributes:
+        suits (dict[int, str]): A dictionary with an int as the suit value
+        for the dict key and a string as the suit name for the dict value.
 
-     __values = contains a dictionary with all values
-     
-     __suits = contains a dictionary with all suits
+        values (dict[int, str]): A dictionary with an int as the card value
+        for the dict key and a string as the card value for the dict value.
 
-     __value = (between 1-13)
-     
-     __suit = (between 1-4)
+        value (int): The number of card values in the deck.
 
-     Methods
-     ---------
-
-     shuffle = randomly change value and suit of card
-     
-     get_suit = return suit
-     
-     get_suit_string = returns the card suit as a string
-     
-     set_suit = set suit to new #
-     
-     get_value = return value
-     
-     get_value_string = returns the card value as a string
-     
-     set_value = set value to new #
-     
-     card_name = returns the card name as a string ex:'King of Clubs'
-
-     Properties
-     ----------
-
-     value = card value (1-13)
-
-     suit = card suit (1-4)
-
+        suit (int): The number of suits in the deck.
     """
 
     def __init__(self):
-        # Dict - suits
+        """Constructs a new instance of Card.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         self.__suits = {1: "Club",
                         2: "Diamond",
                         3: "Heart",
                         4: "Spade"}
 
-        # Dict - values
         self.__values = {1: "One",
                          2: "Two",
                          3: "Three",
@@ -76,48 +52,69 @@ class Card:
         self.__suit = 1
         self.shuffle()
 
-    # Set value to random number
-
     def shuffle(self):
+        """Generates a new random suit and card value for the card.
+        
+        Args:
+            self (Card): An instance of Card."""
         self.__value = random.randint(1, 13)
         self.__suit = random.randint(1, 4)
 
-    # Returns card suit
-
     def get_suit(self):
+        """Returns a suit.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         return self.__suit
 
-    # Returns the card suit as a string
-
     def get_suit_string(self):
-
+        """Returns the card suit as a string.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         return self.__suits[self.suit]
 
-    # Sets card suit
-
     def set_suit(self, value):
+        """Sets the card suit to a new number.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         self.__suit = value
 
-    # Returns card value
-
     def get_value(self):
+        """Returns the card value.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         return self.__value
 
-    # Returns card value as a string
-
     def get_value_string(self):
-
+        """Returns the card value as a string.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         return self.__values[self.value]
 
-    # Sets card value
-
     def set_value(self, value):
+        """Sets the card value to a new number.
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         self.__value = value
 
-    # Returns the string expression of a card
-    # Example: 'King of Clubs'
-
     def card_name(self):
+        """Returns the string expression of a card.
+        Example: 'King of Clubs'
+        
+        Args:
+            self (Card): An instance of Card.
+        """
         return (f"{self.get_value_string()} of {self.get_suit_string()}s")
 
     # Properties
