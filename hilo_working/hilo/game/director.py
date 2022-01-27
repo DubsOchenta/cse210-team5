@@ -7,7 +7,30 @@ CSE 210
 """
 
 class Director:
+    """A person who directs the game.
+
+    The director controls the sequece of game play.
+
+    Attributes:
+        first_card (dict{card1.card_name(): card1.get_value()}): A dictionary
+        with card1.card_name as the key and card1.get_value as the value.
+
+        next_card (dict{card2.card_name(): card2.get_value()}): A dictionary
+        with card2.card_name as the key and card2.get_value as the value.
+
+        is_playing (boolean): Whether or not the game is being played.
+
+        points (int): The amount of points scored during a round.
+
+        total_score (int): The score for the entire game.
+    """
+
     def __init__(self):
+        """Constructs a new Director.
+        
+        Args:
+            self (Director): an instance of Director.
+        """
         self.first_card = {}
         self.next_card = {}
         self.is_playing = True
@@ -15,6 +38,11 @@ class Director:
         self.total_score = 300
 
     def start_game(self):
+        """Starts the game by running the main game loop.
+        
+        Args:
+            self (director): an instance of Director.
+        """
         while self.is_playing:
             self.first_draw()
             self.hilo()
@@ -23,6 +51,11 @@ class Director:
             self.play_again()
 
     def first_draw(self):
+        """Generates the first random card and displays it to the player.
+        
+        Args:
+            self (Director): An instance of Director.
+        """
         if not self.is_playing:
             return
 
@@ -37,6 +70,11 @@ class Director:
         print(f"\nThe card is: {key1}")
 
     def hilo(self):
+        """Asks the user if the next card will be higher or lower.
+        
+        Args:
+            self (Director): An instance of Director.
+        """
         self.draw_card = ""
         self.draw_card = input("Higher or lower? [h/l] ").lower()
         while self.draw_card != "h" and self.draw_card != "l":
@@ -44,6 +82,11 @@ class Director:
             self.draw_card = input("Higher or lower? [h/l] ").lower()
 
     def second_draw(self):
+        """Generates the second random card and displays it to the player.
+        
+        Args:
+            self (Director): An instance of Director.
+        """
         card2 = Card()
         card2.shuffle()
         card_dict2 = {card2.card_name(): card2.get_value()}
@@ -55,6 +98,11 @@ class Director:
         print(f"Next card was: {key2}")
 
     def score(self):
+        """Updates the players score and displays the score to the player.
+        
+        Args:
+            self (Director): An instance of Director.
+        """
         if self.card_value1 < self.card_value2 and self.draw_card == "h":
             self.points = 100
         elif self.card_value1 > self.card_value2 and self.draw_card == "l":
@@ -72,6 +120,11 @@ class Director:
         self.next_card.clear()
 
     def play_again(self):
+        """Asks the player if they want to play again.
+        
+        Args:
+            self (Director): An instance of Director.
+        """
         if self.is_playing == (self.total_score > 0):
             deal = ""
             deal = input("Play again? [y/n] ").lower()
