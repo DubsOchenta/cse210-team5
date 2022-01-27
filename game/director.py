@@ -39,6 +39,7 @@ class Director:
         self.points = 0
         self.total_score = 300
         self.font = Font()
+        self.font_color = ""
 
     def start_game(self):
         self.font.print_title()
@@ -48,7 +49,6 @@ class Director:
             self (director): an instance of Director.
         """
         self.font = Font()
-        self.font_color = ""
 
     def start_game(self):
         self.font.print_title()
@@ -77,6 +77,7 @@ class Director:
 
         for key1, value1 in self.first_card.items():
             self.card_value1 = value1
+            print(self.card_value1)
         print(f"\nThe card is: {key1}")
 
     def hilo(self):
@@ -105,6 +106,7 @@ class Director:
 
         for key2, value2 in self.next_card.items():
             self.card_value2 = value2
+            print(self.card_value2)
         print(f"Next card was: {key2}")
 
     def score(self):
@@ -119,6 +121,9 @@ class Director:
         elif self.card_value1 > self.card_value2 and self.draw_card == "l":
             self.points = 100
             self.font_color = self.font.green_text
+        elif self.card_value1 == self.card_value2 and self.draw_card == "l" or self.draw_card == "h":
+            self.points = 0
+            self.font_color = self.font.blue_text
         else:
             self.total_score -= 75
             self.points = 0

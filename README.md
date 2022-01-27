@@ -1,6 +1,7 @@
 <p align="center">
   <img src="hilo_menu.png" alt="Sublime's custom image" height="300px"/>
 </p>
+
 # Hilo
 Wanna play a game of chance and sheer dumb luck...by guessing cards correctly? Then play Hilo and your desire will become a reality. The rules are simple. You start out with 300 points and a randomly chosen starting card. Then you are asked a simple question: "h" for High or "l" for Low. Each time you guess correctly, you get 100 points, Woohoo! But if you guess wrong, well, say goodbye to 75 points from your score. As long as your score stays above zero you can keep playing. But, If not then it is GAME-OVER.
 
