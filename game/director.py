@@ -43,15 +43,6 @@ class Director:
 
     def start_game(self):
         self.font.print_title()
-        """Starts the game by running the main game loop.
-        
-        Args:
-            self (director): an instance of Director.
-        """
-        self.font = Font()
-
-    def start_game(self):
-        self.font.print_title()
         self.font.print_instructions()
         while self.is_playing:
             self.first_draw()
